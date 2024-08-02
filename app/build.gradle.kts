@@ -57,16 +57,20 @@ dependencies {
   implementation(libs.androidx.ui.graphics)
   implementation(libs.androidx.ui.tooling.preview)
   implementation(libs.androidx.material3)
+  implementation(libs.koin)
+  implementation(libs.koin.compose)
+  implementation(libs.showkase.processor) { exclude(group = "com.intellij", module = "annotations") }
+
+  debugImplementation(libs.androidx.ui.test.manifest)
+  debugImplementation(libs.androidx.ui.tooling)
+  debugImplementation(libs.showkase) { exclude(group = "com.intellij", module = "annotations") }
+
   testImplementation(libs.junit)
+
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso.core)
   androidTestImplementation(platform(libs.androidx.compose.bom))
   androidTestImplementation(libs.androidx.ui.test.junit4)
-  debugImplementation(libs.androidx.ui.tooling)
-  debugImplementation(libs.androidx.ui.test.manifest)
-
-  debugImplementation(libs.showkase) { exclude(group = "com.intellij", module = "annotations") }
-  implementation(libs.showkase.processor) { exclude(group = "com.intellij", module = "annotations") }
 
   kapt(libs.showkase.processor) { exclude(group = "com.intellij", module = "annotations") }
 }

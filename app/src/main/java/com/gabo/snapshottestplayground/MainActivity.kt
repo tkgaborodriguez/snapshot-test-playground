@@ -16,8 +16,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.airbnb.android.showkase.models.Showkase
 import com.gabo.snapshottestplayground.ui.theme.SnapshotTestPlaygroundTheme
+import org.koin.androidx.compose.koinViewModel
 
 class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,4 +65,17 @@ fun GreetingPreview() {
   SnapshotTestPlaygroundTheme {
     Greeting("Android")
   }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun HelloUserPreview() {
+  SnapshotTestPlaygroundTheme {
+    HelloUser("Gabo")
+  }
+}
+
+@Composable
+fun HelloUser(userName: String, viewModel: HomeViewModel = koinViewModel()) {
+  Text(text = viewModel.sayHello(userName), modifier = Modifier.padding(8.dp))
 }
