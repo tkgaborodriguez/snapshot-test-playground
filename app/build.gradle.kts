@@ -2,6 +2,7 @@ plugins {
   alias(libs.plugins.android.application)
   alias(libs.plugins.jetbrains.kotlin.android)
   alias(libs.plugins.kapt)
+  alias(libs.plugins.roborazzi)
 }
 
 android {
@@ -45,6 +46,7 @@ android {
       excludes += "/META-INF/{AL2.0,LGPL2.1}"
     }
   }
+  testOptions.unitTests.isIncludeAndroidResources = true
 }
 
 dependencies {
@@ -66,6 +68,9 @@ dependencies {
   debugImplementation(libs.showkase) { exclude(group = "com.intellij", module = "annotations") }
 
   testImplementation(libs.junit)
+  testImplementation(libs.robolectric)
+  testImplementation(libs.roborazzi)
+  testImplementation(libs.roborazzi.compose)
 
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso.core)
