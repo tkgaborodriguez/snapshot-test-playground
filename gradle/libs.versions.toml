@@ -10,6 +10,8 @@ activityCompose = "1.9.1"
 composeBom = "2024.04.01"
 showkase = "1.0.3"
 koin = "3.5.6"
+roborazzi = "1.25.0"
+robolectric = "4.11.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -30,8 +32,12 @@ showkase = { module = "com.airbnb.android:showkase", version.ref = "showkase" }
 showkase-processor = { module = "com.airbnb.android:showkase-processor", version.ref = "showkase" }
 koin = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }
+roborazzi = { group = "io.github.takahirom.roborazzi", name = "roborazzi", version.ref = "roborazzi" }
+roborazzi-compose = { group = "io.github.takahirom.roborazzi", name = "roborazzi-compose", version.ref = "roborazzi" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+roborazzi = {id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }
